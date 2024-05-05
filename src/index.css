@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
 :root {
-  --theme: #fefae0;
+  --theme: #90e0ef;
   --black: #000;
 }
+
+/* 000814 */
 
 * {
   margin: 0;
@@ -18,12 +23,16 @@
 }
 
 header {
-  border-block-end: 1px solid var(--black);
+  /* border-block-end: 1px solid var(--black); */
   position: fixed;
   width: 100%;
   width: -webkit-fill-available;
   z-index: 3;
-  background-color: var(--theme);
+  /* background-color: var(--theme); */
+}
+
+.logo {
+  width: 60%;
 }
 
 .nav {
@@ -31,13 +40,13 @@ header {
   justify-content: space-between;
   align-items: center;
   font-size: calc(0.3rem + 1vw);
-  padding-inline: clamp(3.5rem,  13%,   8rem);
-  padding-block-start: min(2rem, 4vh);
-  padding-block-end: min(2rem, 4vh);
+  padding-inline: clamp(3.5rem, 13%, 8rem);
+  /* padding-block-start: min(2rem, 6vh);
+  padding-block-end: min(2rem, 6vh); */
   color: var(--black);
 }
 
-.header-name{
+.header-name {
   font-family: 'Arimo', sans-serif;
   font-weight: 500;
   font-size: calc(0.75rem + 0.75vw);
@@ -58,13 +67,15 @@ header {
   list-style-type: none;
 }
 
+/* wheat, white */
+
 .header-ul li a {
-  color: var(--black);
+  color: aliceblue;
   text-transform: capitalize;
   text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: calc(0.55rem + 0.75vw);
 }
@@ -81,6 +92,107 @@ header {
 } */
 
 /* Header - Navigation Styling End */
+
+/* Home Page Styling */
+
+.background {
+  background-image: url('/public/im.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.main {
+  padding-block-start: 6rem;
+
+  margin-block-end: 3rem;
+}
+
+h1 {
+  position: absolute;
+  top: 14rem;
+  width: calc(3em * 6);
+    margin-inline: clamp(2.5rem, 8%, 4rem);
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-size: calc(1rem + 2vw);
+  color: #f4fffd;
+}
+
+/* Home Page Styling End */
+
+
+/* Service Page Styling */
+
+.service-container {
+  background-color: mintcream;
+  
+}
+
+.service-header {
+  padding-top: 4rem;
+  font-size: calc(0.5rem + 1.5vw);
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit,minmax(410px,1fr));
+  margin-inline: clamp(2.5rem, 8%, 4rem);
+  margin-top: 1.5rem;
+}
+
+.grid-container > div {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.grid-container > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.grid-container h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: calc(.8rem + 1vw);
+}
+
+.grid-container p {
+  font-size: clamp(.9em,.75rem + .5vw,1.2em);
+  font-family: "Teachers", sans-serif;
+}
+
+hr {
+  margin-block: 1rem;
+}
+
+.grid-container h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: calc(.5rem + 0.75vw);
+}
+
+.grid-container li {
+  list-style-type: none;
+  font-family: "Teachers", sans-serif;
+  font-size: calc(.35rem + 0.75vw);
+}
+
+.grid-container span {
+  margin-left: 0.5rem;
+}
+
+.consulting > li {
+  list-style-type: disc;
+  margin-left: 4rem;
+}
 
 @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
 
@@ -121,7 +233,7 @@ header {
     flex-direction: column;
     padding-inline-end: 0;
     padding-block: min(30vh, 10rem);
-    padding-inline:  2em;
+    padding-inline: 2em;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);

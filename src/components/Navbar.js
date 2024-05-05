@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import Logo from "../assests/logo.png"
 
 const links = [
   {
@@ -36,7 +37,7 @@ const Navbar = () => {
             <i class="fa-solid fa-bars" onClick={showNavBar}></i>
           </div>
           <div>
-            Logo
+            <img src={Logo} alt="logo" className='logo' />
           </div>
           <ul className={navbarOpen ? "header-ul active" : "header-ul"}>
             <div id="close">
