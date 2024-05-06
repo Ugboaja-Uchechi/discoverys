@@ -129,14 +129,39 @@ h1 {
 
 /* About Page Styling */
 
+.about-container {
+  background-color: mintcream;
+  height: 100vh;
+  padding-block: 4rem;
+}
 
+.about-header {
+  font-size: calc(0.5rem + 1.5vw);
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit,minmax(410px,1fr));
+  margin-inline: clamp(2.5rem, 8%, 4rem);
+  margin-top: 1.5rem;
+}
+
+.about-grid p {
+  font-size: clamp(.9em,.75rem + .5vw,1.2em);
+  font-family: "Teachers", sans-serif;
+}
+
+/* About Page Styling End */
 
 
 /* Service Page Styling */
 
 .service-container {
-  background-color: mintcream;
-  
+  background-color: lavender;
+  padding-bottom: 4rem;
 }
 
 .service-header {
