@@ -183,6 +183,119 @@ const Services = () => {
             </li>
           </ul>
         </div>
+        <div>
+          <h3>ISO 27001 Consulting Services</h3>
+          <p></p>
+          <hr />
+          <ul>
+            <h4>Services Offered</h4>
+            <li>
+              <FcCheckmark />
+              <span>
+              Information Security Management System (ISMS) Implementation
+              </span>
+              <ul className='consulting'>
+                <li>
+                Risk assessment and management
+                </li>
+                <li>
+                  Policy and procedure development
+                </li>
+                <li>
+                Security controls implementation
+                </li>
+              </ul>
+            </li>
+            <li>
+              <FcCheckmark />
+              <span>
+                ISO 27001 Certification Support
+              </span>
+              <ul className='consulting'>
+                <li>
+                Implementation guidance
+                </li>
+                <li>
+                  Internal audit assistance
+                </li>
+                <li>
+                  Certification readiness assessment
+                </li>
+              </ul>
+            </li>
+            <li>
+              <FcCheckmark />
+              <span>
+                Continuous Improvement
+              </span>
+              <ul className='consulting'>
+                <li>
+                Security awareness training
+                </li>
+                <li>
+                Incident response planning
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>ISO 9001 Consulting Services</h3>
+          <p></p>
+          <hr />
+          <ul>
+            <h4>Services Offered</h4>
+            <li>
+              <FcCheckmark />
+              <span>
+                Quality Management System (QMS) Implementation
+              </span>
+              <ul className='consulting'>
+                <li>
+                  Gap Analysis
+                </li>
+                <li>
+                  Documentation development
+                </li>
+                <li>
+                  Process mapping and optimization
+                </li>
+
+              </ul>
+            </li>
+            <li>
+              <FcCheckmark />
+              <span>
+                ISO 9001 Certification Support
+              </span>
+              <ul className='consulting'>
+                <li>
+                  Implementation assistance
+                </li>
+                <li>
+                  Internal audit support
+                </li>
+                <li>
+                  Certification readiness preparation
+                </li>
+              </ul>
+            </li>
+            <li>
+              <FcCheckmark />
+              <span>
+                Continuous Improvement
+              </span>
+              <ul className='consulting'>
+                <li>
+                  Performance metrics and monitoring
+                </li>
+                <li>
+                  Training and development
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   )
