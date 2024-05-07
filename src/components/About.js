@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import HandShake from "../assests/handshake.jpg"
 
 const About = () => {
   const [text, setText] = useState(false);
@@ -32,7 +33,9 @@ const About = () => {
 
           </p>
         </div>
-        <div></div>
+        <div>
+          <img src={HandShake} alt="handshake" className='handshake' />
+        </div>
       </div>
     </section>
   )
