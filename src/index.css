@@ -4,6 +4,14 @@
 :root {
   --theme: #90e0ef;
   --black: #000;
+  --cyan: hsl(180, 66%, 49%);
+  --darkViolet: hsl(257, 27%, 26%);
+  --red: hsl(0, 87%, 67%);
+  --gray: hsl(0, 0%, 75%);
+  --grayishViolet: hsl(257, 7%, 63%);
+  --veryDarkBlue: hsl(255, 11%, 22%);
+  --veryDarkViolet: hsl(260, 8%, 14%);
+  --white: #fff;
 }
 
 /* 000814 */
@@ -118,7 +126,7 @@ h1 {
   position: absolute;
   top: 14rem;
   width: calc(3em * 6);
-    margin-inline: clamp(2.5rem, 8%, 4rem);
+  margin-inline: clamp(2.5rem, 8%, 4rem);
   text-align: left;
   font-family: "Raleway", sans-serif;
   font-size: calc(1rem + 2vw);
@@ -131,7 +139,6 @@ h1 {
 
 .about-container {
   background-color: #fff;
-  height: 100vh;
   padding-block: 4rem;
 }
 
@@ -144,24 +151,42 @@ h1 {
 .about-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit,minmax(410px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
   margin-inline: clamp(2.5rem, 8%, 4rem);
   margin-top: 1.5rem;
 }
 
 .about-grid p {
-  font-size: clamp(.9em,.75rem + .5vw,1.2em);
+  font-size: clamp(.9em, .75rem + .5vw, 1.2em);
   font-family: "Teachers", sans-serif;
   color: #1b4965;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #1b4965;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+}
+
+.btn:hover {
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
+  background-color: #2a6284;
+}
+
 .handshake {
-  height: 100%;
   width: 100%;
 }
 
 /* About Page Styling End */
-
 
 /* Service Page Styling */
 
@@ -180,19 +205,19 @@ h1 {
 .grid-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit,minmax(410px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
   margin-inline: clamp(2.5rem, 8%, 4rem);
   margin-top: 1.5rem;
 }
 
-.grid-container > div {
+.grid-container>div {
   border: 1px solid black;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.grid-container > div:hover {
+.grid-container>div:hover {
   border: 1px solid #ffffff;
 }
 
@@ -202,7 +227,7 @@ h1 {
 }
 
 .grid-container p {
-  font-size: clamp(.9em,.75rem + .5vw,1.2em);
+  font-size: clamp(.9em, .75rem + .5vw, 1.2em);
   font-family: "Teachers", sans-serif;
 }
 
@@ -220,17 +245,118 @@ hr {
 .grid-container li {
   list-style-type: none;
   font-family: "Teachers", sans-serif;
-  font-size: calc(.35rem + 0.75vw);
+  font-size: calc(.45rem + 0.75vw);
 }
 
 .grid-container span {
   margin-left: 0.5rem;
 }
 
-.consulting > li {
+.consulting>li {
   list-style-type: disc;
   margin-left: 4rem;
 }
+
+/* Footer page styling */
+
+/* .bg {
+  background-color: #1f2937;hsl(260deg 12.63% 8.84%)
+} */
+
+footer {
+  background-color: var(--veryDarkViolet);
+  padding-block: 4rem;
+}
+
+.footer-tagline {
+  font-size: clamp(.9em, .75rem + .5vw, 1.2em);
+  font-family: "Teachers", sans-serif;
+  color: #fff;
+  margin-block: .5rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.icons {
+  width: 2rem;
+  height: 2rem;
+  color: rgb(2, 136, 209)
+}
+
+#d-flex {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  padding-inline: clamp(2.5rem, 8%, 4rem);
+}
+
+#footer-h4 {
+  font-size: calc(0.9rem + 0.5vw);
+  color: var(--white);
+}
+
+.f-grow {
+  flex-grow: 1;
+}
+
+#d-contents {
+  flex-grow: 1;
+  display: contents;
+}
+
+.footer-h5 {
+  color: var(--white);
+  font-size: calc(.5rem + 0.75vw);
+  font-family: "Raleway", sans-serif;
+}
+
+.footer-p {
+  font-size: clamp(.7em, .65rem + .4vw, 1em);
+  font-family: "Teachers", sans-serif;
+  color: #fff;
+  margin-top: .75rem;
+}
+
+/* Hover Effects */
+
+.footer-p:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+#footer-margin {
+  flex-grow: 2;
+}
+
+.msg {
+  width: 100%;
+  font-family: "Teachers", sans-serif;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  outline: none;
+  padding: 1rem;
+  font-size: 16px;
+  color: #1b4965;
+  resize: none;
+  margin-top: .75rem;
+}
+
+.error {
+  font-family: "Teachers", sans-serif;
+  font-size: 14px;
+  color: #ff3139;
+}
+
+.footer-btn {
+  margin-top: .75rem;
+  padding-inline: 3rem;
+}
+
 
 @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
 
