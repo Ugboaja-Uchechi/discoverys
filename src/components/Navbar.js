@@ -26,12 +26,22 @@ const links = [
 ];
 
 const Navbar = () => {
-
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  const [navbarColor, setNavbarColor] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const showNavBar = () => setNavbarOpen(!navbarOpen);
+
+  const changeBackground = () => {
+    if (window.scrollY >= window.innerHeight) {
+      setNavbarColor(true);
+    } else {
+      setNavbarColor(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
   return (
     <>
-      <header>
+      <header className={navbarColor? "navbar-color" : "navbar-transparent"}>
         <nav className="nav">
           <div id="menu">
             <i class="fa-solid fa-bars" onClick={showNavBar}></i>
@@ -45,7 +55,7 @@ const Navbar = () => {
             </div>
             {links.map((link) => (
               <li className="animation" key={link.id}>
-                <Link to={link.path} >{link.text}</Link>
+                <Link to={link.path} exact smooth>{link.text}</Link>
               </li>
             ))}
           </ul>

@@ -39,8 +39,16 @@ header {
   /* background-color: var(--theme); */
 }
 
+.navbar-transparent {
+  background-color: transparent;
+}
+
+.navbar-color {
+  background-color: var(--veryDarkViolet);
+}
+
 .logo {
-  width: 60%;
+  width: 50%;
 }
 
 .nav {
@@ -320,6 +328,8 @@ footer {
   font-family: "Teachers", sans-serif;
   color: #fff;
   margin-top: .75rem;
+  text-decoration: none;
+  display: block;
 }
 
 /* Hover Effects */
@@ -346,10 +356,21 @@ footer {
   margin-top: .75rem;
 }
 
+.email {
+  width: 100%;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  outline: none;
+  padding: .5rem;
+  font-size: 16px;
+  color: #1b4965;
+  margin-top: .75rem;
+}
+
 .error {
   font-family: "Teachers", sans-serif;
-  font-size: 14px;
-  color: #ff3139;
+  font-size: 16px;
+  color: #ff141b;
 }
 
 .footer-btn {

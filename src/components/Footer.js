@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { HashLink as Link } from 'react-router-hash-link';
+import emailjs from "@emailjs/browser"
+
 
 const navigation = {
   solutions: [
@@ -16,7 +19,16 @@ const navigation = {
     { name: 'API Status' },
   ],
   company: [
-    { name: 'About', href: '#' },
+    {
+      id: 1,
+      path: '#about',
+      text: 'About Us'
+    },
+    {
+      id: 2,
+      path: '#services',
+      text: 'Our Services'
+    },
     { name: 'Blog', href: '#' },
     { name: 'Jobs', href: '#' },
     { name: 'Press', href: '#' },
@@ -104,17 +116,55 @@ const navigation = {
 const Footer = () => {
 
   const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [stateMessage, setStateMessage] = useState(null);
+
+  const sendEmail = (e) => {
+    e.persist();
+    e.preventDefault();
+    setIsSubmitting(true);
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          setStateMessage('Message sent!');
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000); // hide message after 5 seconds
+        },
+        (error) => {
+          setStateMessage('Something went wrong, please try again later');
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000); // hide message after 5 seconds
+        }
+      );
+
+    // Clears the form after sending the email
+    e.target.reset();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!message.trim()) {
-      setError("Please enter a message");
+    if (!email.trim() || !message.trim()) {
+      setError("Please fill all fields");
       return;
     }
+    setError("");
   };
+
   return (
-    <footer>
+    <footer id='contact'>
       <div id="d-flex">
         <div className='f-grow'>
           <h4 id="footer-h4">Shortly</h4>
@@ -139,9 +189,9 @@ const Footer = () => {
           </div>
           <div>
             <h5 class="footer-h5">Company</h5>
-
-            <p class="footer-p">About Us</p>
-            <p class="footer-p">Our Services</p>
+            {navigation.company.map((link) => (
+              <Link to={link.path} exact smooth class="footer-p">{link.text}</Link>
+            ))}
           </div>
         </div>
         <div id="footer-margin">
@@ -159,8 +209,19 @@ const Footer = () => {
                 required
                 className="msg"
               />
-              {error && <p className="error">{error}</p>}
+
             </div>
+            <div>
+              <input
+                type='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder='Your email'
+                required
+                className='email'
+              />
+            </div>
+            {error && <p className="error">{error}</p>}
             <button className='btn footer-btn' onClick={handleSubmit}>Submit</button>
           </div>
         </div>

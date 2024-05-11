@@ -10,7 +10,7 @@ const Home = () => {
       <div>
         <Navbar />
       </div>
-      <div className='background'>
+      <div className='background' id='home'>
         <main className='main'>
           <h1>Navigating uncertainties, securing futures: Your trusted risk and audit partner</h1>
         </main>

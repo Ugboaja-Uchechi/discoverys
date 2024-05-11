@@ -4,7 +4,7 @@ import { FcCheckmark } from 'react-icons/fc';
 
 const Services = () => {
   return (
-    <section className='service-container'>
+    <section className='service-container' id='services'>
       <h2 className='service-header'>Our Services</h2>
       <div className='grid-container'>
         <div>
