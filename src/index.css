@@ -14,7 +14,7 @@
   --white: #fff;
 }
 
-/* 000814 */
+/* f77f00 */
 
 * {
   margin: 0;
@@ -44,7 +44,7 @@ header {
 }
 
 .navbar-color {
-  background-color: var(--veryDarkViolet);
+  background-color: #0091ff;
 }
 
 .logo {
@@ -93,7 +93,7 @@ header {
   cursor: pointer;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  font-size: calc(0.55rem + 0.75vw);
+  font-size: calc(0.49rem + 0.7vw);
 }
 
 /* .header-ul li a:hover,
@@ -281,11 +281,14 @@ footer {
   font-family: "Teachers", sans-serif;
   color: #fff;
   margin-block: .5rem;
+  text-align: center;
 }
 
 .flex {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .icons {
@@ -295,10 +298,11 @@ footer {
 }
 
 #d-flex {
-  display: flex;
-  gap: 5rem;
-  justify-content: center;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2rem;
+  /* justify-content: center;
+  align-items: baseline; */
   width: 100%;
   padding-inline: clamp(2.5rem, 8%, 4rem);
 }
@@ -306,6 +310,13 @@ footer {
 #footer-h4 {
   font-size: calc(0.9rem + 0.5vw);
   color: var(--white);
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
+#footer-h4 span {
+  text-align: left;
+  font-style: italic;
 }
 
 .f-grow {
@@ -319,7 +330,7 @@ footer {
 
 .footer-h5 {
   color: var(--white);
-  font-size: calc(.5rem + 0.75vw);
+  font-size: calc(.5rem + 0.95vw);
   font-family: "Raleway", sans-serif;
 }
 
@@ -387,11 +398,6 @@ footer {
     font-size: 1.5rem;
   }
 
-  #menu {
-    margin-inline-end: 1.5rem;
-    margin-block-start: 25%;
-  }
-
   #close {
     position: absolute;
     top: 33.95px;
@@ -399,13 +405,17 @@ footer {
     margin-inline-end: 0;
   }
 
+  /* .navbar-color {
+    background-color: transparent;
+  } */
+
   header {
     border-block-end: none;
     background-color: transparent;
   }
 
   .nav {
-    justify-content: flex-end;
+    padding-inline: 1rem;
   }
 
   .header-ul {
@@ -435,10 +445,34 @@ footer {
   }
 
   .header-ul li a {
-    font-size: calc(1.5rem + 0.75vw);
+    font-size: calc(.5rem + 1vw);
+    color: #1b4965;
+    font-weight: 700;
   }
 
   .header-name {
     display: none;
+  }
+
+  h1 {
+    margin-inline: 1rem;
+    text-align: left;
+    font-family: "Raleway", sans-serif;
+    font-size: calc(1rem + 2vw);
+    width: auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid,
+  .grid-container {
+    margin-inline: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+
   }
 }

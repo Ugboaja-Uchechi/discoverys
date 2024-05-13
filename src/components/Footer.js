@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { HashLink as Link } from 'react-router-hash-link';
 import emailjs from "@emailjs/browser"
 
@@ -120,39 +120,31 @@ const Footer = () => {
   const [error, setError] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef();
   const [stateMessage, setStateMessage] = useState(null);
 
   const sendEmail = (e) => {
-    e.persist();
     e.preventDefault();
-    setIsSubmitting(true);
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          setStateMessage('Message sent!');
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000); // hide message after 5 seconds
-        },
-        (error) => {
-          setStateMessage('Something went wrong, please try again later');
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000); // hide message after 5 seconds
-        }
-      );
+    const templateParams = {
+      from_email: email,
+      to_name: 'Discovery',
+      message: message,
+    };
 
-    // Clears the form after sending the email
-    e.target.reset();
-  };
+    emailjs.send(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
+      templateParams,
+      process.env.REACT_APP_PUBLIC_KEY,
+    ).then((response) => {
+      console.log('Email sent successfully!', response);
+      setMessage('');
+      setEmail('');
+    }).catch((error) => {
+      console.log('Something went wrong...', error);
+      setError('Something went wrong...');
+    });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -161,13 +153,14 @@ const Footer = () => {
       return;
     }
     setError("");
+    sendEmail(e);
   };
 
   return (
     <footer id='contact'>
       <div id="d-flex">
         <div className='f-grow'>
-          <h4 id="footer-h4">Shortly</h4>
+          <h4 id="footer-h4">Discoverys <br /> <span>Multi-solution Services</span> </h4>
           <p className='footer-tagline'>Your trusted risk and audit partner</p>
           <div className="flex">
             {navigation.social.map((item) => (
@@ -181,22 +174,22 @@ const Footer = () => {
 
         <div id="d-contents">
           <div>
-            <h5 class="footer-h5">Solutions</h5>
+            <h5 className="footer-h5">Solutions</h5>
             {navigation.solutions.map((item) => (
-              <p class="footer-p" key={item.name}>{item.name}</p>
+              <p className="footer-p" key={item.name}>{item.name}</p>
             ))}
 
           </div>
           <div>
-            <h5 class="footer-h5">Company</h5>
+            <h5 className="footer-h5">Company</h5>
             {navigation.company.map((link) => (
-              <Link to={link.path} exact smooth class="footer-p">{link.text}</Link>
+              <Link to={link.path} exact smooth className="footer-p">{link.text}</Link>
             ))}
           </div>
         </div>
         <div id="footer-margin">
-          <h5 class="footer-h5">Contact Us</h5>
-          <div>
+          <h5 className="footer-h5">Contact Us</h5>
+          <form>
 
             <div>
               <textarea
@@ -222,14 +215,13 @@ const Footer = () => {
               />
             </div>
             {error && <p className="error">{error}</p>}
-            <button className='btn footer-btn' onClick={handleSubmit}>Submit</button>
-          </div>
+            <button className='btn footer-btn' onClick={handleSubmit} ref={formRef}>Submit</button>
+          </form>
         </div>
       </div>
     </footer>
 
   )
-
 }
 
-export default Footer
+export default Footer;

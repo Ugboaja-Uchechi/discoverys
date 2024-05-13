@@ -44,8 +44,8 @@ const Services = () => {
           </ul>
         </div>
         <div>
-          <h3>Internal Audit</h3>
-          <p> Our internal audit provides independent, objective assurance and consulting services designed to add value and improve your organization's operations. It evaluates the effectiveness of internal controls, risk management, and governance processes.</p>
+          <h3>Audit</h3>
+          <p> Our audit provides independent, objective assurance and consulting services designed to add value and improve your organization's operations. It evaluates the effectiveness of internal controls, risk management, and governance processes.</p>
           <hr />
           <ul>
             <h4>Services Offered</h4>
@@ -157,7 +157,7 @@ const Services = () => {
                   Implementation support
                 </li>
                 <li>
-                  Internal audit preparation
+                  Audit preparation
                 </li>
                 <li>
                   Certification readiness assessment
@@ -216,7 +216,7 @@ const Services = () => {
                 Implementation guidance
                 </li>
                 <li>
-                  Internal audit assistance
+                  Audit assistance
                 </li>
                 <li>
                   Certification readiness assessment
@@ -273,7 +273,7 @@ const Services = () => {
                   Implementation assistance
                 </li>
                 <li>
-                  Internal audit support
+                  Audit support
                 </li>
                 <li>
                   Certification readiness preparation

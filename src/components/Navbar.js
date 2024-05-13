@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-import Logo from "../assests/logo.png"
+import Logo from "../assests/logo.png";
+import { CgMenuRight } from 'react-icons/cg';
+import { IoClose } from 'react-icons/io5';
 
 const links = [
   {
@@ -41,17 +43,19 @@ const Navbar = () => {
   window.addEventListener("scroll", changeBackground);
   return (
     <>
-      <header className={navbarColor? "navbar-color" : "navbar-transparent"}>
+      <header className={navbarColor ? "navbar-color" : "navbar-transparent"}>
         <nav className="nav">
-          <div id="menu">
-            <i class="fa-solid fa-bars" onClick={showNavBar}></i>
-          </div>
           <div>
             <img src={Logo} alt="logo" className='logo' />
           </div>
+          <div id="menu" onClick={showNavBar}>
+            <CgMenuRight />
+
+          </div>
+
           <ul className={navbarOpen ? "header-ul active" : "header-ul"}>
-            <div id="close">
-              <i class="fa-solid fa-xmark" onClick={showNavBar}></i>
+            <div id="close" onClick={showNavBar}>
+              <IoClose />
             </div>
             {links.map((link) => (
               <li className="animation" key={link.id}>
