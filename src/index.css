@@ -151,7 +151,7 @@ h1 {
 }
 
 .about-header {
-  font-size: calc(0.5rem + 1.5vw);
+  font-size: calc(0.75rem + 1.2vw);
   text-align: center;
   font-family: "Raleway", sans-serif;
 }
@@ -165,7 +165,7 @@ h1 {
 }
 
 .about-grid p {
-  font-size: clamp(.9em, .75rem + .5vw, 1.2em);
+  font-size: clamp(1em, 1rem + .5vw, 1.2em);
   font-family: "Teachers", sans-serif;
   color: #1b4965;
 }
@@ -205,7 +205,7 @@ h1 {
 
 .service-header {
   padding-top: 4rem;
-  font-size: calc(0.5rem + 1.5vw);
+  font-size: calc(0.75rem + 1.2vw);
   text-align: center;
   font-family: "Raleway", sans-serif;
 }
@@ -253,7 +253,7 @@ hr {
 .grid-container li {
   list-style-type: none;
   font-family: "Teachers", sans-serif;
-  font-size: calc(.45rem + 0.75vw);
+  font-size: calc(.55rem + 0.75vw);
 }
 
 .grid-container span {
@@ -405,6 +405,10 @@ footer {
     margin-inline-end: 0;
   }
 
+  .background {
+    height: 80vh;
+  }
+
   /* .navbar-color {
     background-color: transparent;
   } */
@@ -446,7 +450,7 @@ footer {
 
   .header-ul li a {
     font-size: calc(.5rem + 1vw);
-    color: #1b4965;
+    color: #fff;
     font-weight: 700;
   }
 
